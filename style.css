@@ -13,8 +13,9 @@
     font-family: 'Urbanist', sans-serif;
 }
 body {
+    width: 100vw;
     scroll-behavior: smooth;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
     background-color: var(--bg-clr);
 }
 a {
@@ -89,15 +90,15 @@ section {
             width: 100%;
         }
         &::before {
-            height: 30%;
-            width: 90%;
+            height: 60%;
+            width: 120%;
             top: 50%;
             left: 50%;
             translate: -50% -50%;  
             content: '';
             position: absolute;
             z-index: -1;
-            background-color: rgb(255, 255, 255);
+            background-color: var(--primary-clr);
             border-radius: 100%;
             filter: blur(20px);
         }
@@ -144,20 +145,19 @@ section {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 15px;
+        gap: 10px;
         font-size: 20px;
-        /* width: 20%; */
         &.response {
             display: none;
         }
         & .regular {
             cursor: pointer;
             background-color: #99999936;
-            padding: 10px;
+            padding: 10px 15px;
             border-radius: 5px;
             transition: var(--transition);
             &:hover {
-                background-color: #424242;
+                background-color: var(--primary-clr);
             }
         }
     }
@@ -232,7 +232,6 @@ section {
     }
     & .hero-image {
         width: 50%;
-        height: max-content;
         position: relative;
         & .background {
             position: absolute;
@@ -244,7 +243,7 @@ section {
             z-index: -1;
             translate: -50% -50%;
             background-color: var(--primary-clr);
-            box-shadow: 0 0 300px rgba(255, 166, 0, 0.745);
+            box-shadow: 0 0 200px rgba(255, 166, 0, 0.745);
         }
         & .sparkles {
             position: absolute;
@@ -284,7 +283,7 @@ section {
                 display: flex;
                 align-items: center;
                 top: 50%;
-                left: -10%;
+                left: -5%;
                 & i {
                     background-color: var(--primary-clr);
                     padding: 10px;
@@ -309,11 +308,13 @@ section {
                     align-items: center;
                     display: flex;
                     &:first-child {
-                        padding: 1px;
                         width: 30%;
-                        background-color: var(--primary-clr);
+                        padding: 3px;
+                        /* background-color: var(--primary-clr); */
                         & img {
+                            margin: 0;
                             width: 100%;
+                            border-radius: 15px;
                         }
                     }
                     &:last-child {
@@ -349,10 +350,8 @@ section {
             }
         }
         & img {
-            width: 100%;
-            border-radius: 50px;
-            position: relative;
-
+            width: 65%;
+            margin: 0 17.5%;
         }
     }
 }
@@ -470,7 +469,6 @@ section {
 
 /* Restaurants */
 .restaurants {
-    width: 100%;
     & .text {
         text-align: center;
     }
@@ -667,7 +665,7 @@ section {
                     width: 100%;
                     font-size: 20px;
                     color: var(--primary-clr);
-                    margin: 10px 0;
+                    margin: 5px 0;
                 }
 
             }
@@ -784,6 +782,26 @@ footer {
     & > div {
         &:first-child {
             width: 30%;
+            & .logo {
+                position: relative;
+                width: 100%;
+                & > img {
+                    width: 40%;
+                }
+                &::before {
+                    height: 100%;
+                    width: 120%;
+                    top: -30%;
+                    left: 50%;
+                    translate: -50% -50%;  
+                    content: '';
+                    position: absolute;
+                    z-index: -1;
+                    background-color: var(--primary-clr);
+                    border-radius: 100%;
+                    filter: blur(20px);
+                }
+            }
             & p {
                 font-size: smaller;
                 line-height: 18px;
@@ -943,8 +961,15 @@ footer {
 }
 
 @media only screen and (max-width: 800px) {
+    body {
+        width: 100vw;
+        overflow-x: hidden !important;
+    }
     .navbar {
         position: relative;
+        & .logo {
+            width: 25%;
+        }
         & nav {
             display: none;
             &.responsive {
@@ -953,7 +978,7 @@ footer {
                 width: 100%;
                 left: 0;
                 top: 0;
-                position: absolute;
+                position: fixed;
                 z-index: 999;
                 background-color: #42424276;
                 backdrop-filter: blur(10px);
@@ -1009,7 +1034,7 @@ footer {
             display: none;
             &.response {
                 display: flex;
-                font-size: 20px;
+                font-size: 18px;
             }
         }
     }
@@ -1020,9 +1045,10 @@ footer {
             margin: 20px 0;
         }
         & .hero-image {
+
             width: 100%;
             & img {
-                width: 100%;
+                width: 65%;
             }
             & .background {
                 width: 65%;
@@ -1041,6 +1067,9 @@ footer {
                 &.third {
                     top: 75%;
                 }
+            }
+            & .sparkles {
+                display: none;
             }
         }
     }
@@ -1163,9 +1192,19 @@ footer {
     .hero-section {
         & .text {
             width: 100%;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            & h1 span i {
+                font-size: 40px;
+            }
             & > div:last-child {
                 width: 100%;
+                text-align: left;
             }
+
         }
         & .hero-image {
             margin-bottom: 50px;
@@ -1173,7 +1212,7 @@ footer {
             justify-content: center;
             align-items: center;
             & img {
-                width: 130%;
+                width: 100%;
             }
             & .background {
                 width: 90%;
