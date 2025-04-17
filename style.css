@@ -1027,14 +1027,14 @@ footer {
         font-weight: bold;
     }
     .navbar {
-        padding: 30px 5vw;
+        padding: 30px 4vw;
         & .nav-icons {
             font-size: 15px;
         } 
 
     }  
     section {
-        padding: 30px 5vw;
+        padding: 30px 4vw;
     }
     .hero-section {
         & .text {
@@ -1060,7 +1060,7 @@ footer {
         }
     }
     footer {
-        padding: 30px 5vw;
+        padding: 30px 4vw;
     }
 }
 
@@ -1178,13 +1178,17 @@ footer {
     .services {
         & .sub-sec {
             & .sub-class {
-                padding: 20px;
+                padding: 15px;
                 & > div {
                     width: 48%;
-                    height: 270px;
+                    height: 275px;
                     padding: 10px;
+                    margin: 15px 0;
                     & h5 {
                         font-size: 18px;
+                    }
+                    & p {
+                        font-size: 12px;
                     }
                 }
                 &:first-child > div:last-child {
