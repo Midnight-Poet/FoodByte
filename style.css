@@ -1147,6 +1147,9 @@ footer {
         & .text {
             width: 100%;
             margin: 20px 0;
+            & h1 {
+                width: 80%;
+            }
         }
         & .hero-image {
 
@@ -1335,8 +1338,11 @@ footer {
             align-items: center;
             justify-content: center;
             flex-direction: column;
+            & h1 {
+                width: 100%;
+            }
             & h1 span i {
-                font-size: 40px;
+                font-size: 60px;
             }
             & > div:last-child {
                 width: 100%;
