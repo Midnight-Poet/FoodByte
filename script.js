@@ -93,7 +93,6 @@ gsap.from(heroSection[0].children, {
     scrollTrigger: {
         trigger: heroSection[0],
         start: 'top center',
-        markers: true
     },
     y: 100,
     opacity: 0,
