@@ -269,32 +269,32 @@ section {
 				position: absolute;
 				top: 30%;
 				&.p1 {
-					top: 50%;
-					right: 0;
+					top: 50% !important;
+					right: 0 !important;
 					rotate: 30deg;
 				}
 				&.p2 {
-					top: 5%;
-					right: 25%;
+					top: 5% !important;
+					right: 25% !important;
 				}
 				&.p3 {
-					top: 100%;
-					left: 50%;
+					top: 100% !important;
+					left: 50% !important;
 					rotate: -30deg;
 				}
 			}
 			& div {
 				position: absolute;
-				top: 5%;
-				right: 5%;
+				top: 5% !important;
+				right: 5% !important;
 				width: 15px;
 				height: 15px;
 				border-radius: 100%;
 				background-color: rgba(255, 68, 0, 0.616);
 				&:nth-child(2) {
 					background-color: orange;
-					left: -10%;
-					top: 75%;
+					left: -10% !important;
+					top: 75% !important;
 				}
 			}
 		}
@@ -1573,7 +1573,7 @@ footer {
 	}
 
 	.mission {
-		flex-direction: column;
+		flex-direction: column !important;
 		& .text {
 			width: 100%;
 		}
