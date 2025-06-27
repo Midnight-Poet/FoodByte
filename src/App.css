@@ -258,7 +258,7 @@ section {
 			box-shadow: 0 0 200px rgba(255, 166, 0, 0.804);
 		}
 		& .sparkles {
-			position: absolute;
+			position: absolute !important;
 			height: 100%;
 			width: 100%;
 			top: 0;
@@ -266,35 +266,35 @@ section {
 			z-index: -9;
 			& p {
 				font-size: 30px;
-				position: absolute;
+				position: absolute !important;
 				top: 30%;
 				&.p1 {
-					top: 50% !important;
-					right: 0 !important;
+					top: 50%;
+					right: 0;
 					rotate: 30deg;
 				}
 				&.p2 {
-					top: 5% !important;
-					right: 25% !important;
+					top: 5%;
+					right: 25%;
 				}
 				&.p3 {
-					top: 100% !important;
-					left: 50% !important;
+					top: 100%;
+					left: 50%;
 					rotate: -30deg;
 				}
 			}
 			& div {
-				position: absolute;
-				top: 5% !important;
-				right: 5% !important;
+				position: absolute !important;
+				top: 5%;
+				right: 5%;
 				width: 15px;
 				height: 15px;
 				border-radius: 100%;
 				background-color: rgba(255, 68, 0, 0.616);
 				&:nth-child(2) {
 					background-color: orange;
-					left: -10% !important;
-					top: 75% !important;
+					left: -10%;
+					top: 75%;
 				}
 			}
 		}
