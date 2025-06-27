@@ -456,7 +456,7 @@ export let Home = () => {
 				</div>
 				<Form />
 			</section>
-			<ScrollAnimations />
+			{/* <ScrollAnimations /> */}
 		</>
 	);
 };
