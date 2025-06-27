@@ -588,18 +588,18 @@ export let ScrollAnimations = ({}) => {
 					each: 0.2,
 				},
 			})
-			.from(group1Offspring, {
-				scrollTrigger: {
-					trigger: group1Offspring,
-					start: 'top 40%',
-					scrub: 5,
-				},
-				y: 0,
-				duration: 2,
-				stagger: {
-					each: 0.2,
-				},
-			});
+			// .from(group1Offspring, {
+			// 	scrollTrigger: {
+			// 		trigger: group1Offspring,
+			// 		start: 'top 40%',
+			// 		scrub: 5,
+			// 	},
+			// 	y: 0,
+			// 	duration: 2,
+			// 	stagger: {
+			// 		each: 0.2,
+			// 	},
+			// });
 
 		sections.forEach((section) => {
 			let sequence2 = gsap.timeline({
