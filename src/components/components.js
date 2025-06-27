@@ -536,7 +536,7 @@ export let ScrollAnimations = ({}) => {
 		gsap.from(heroSection[0].children, {
 			scrollTrigger: {
 				trigger: heroSection[0],
-				start: 'top center',
+				start: 'top 30%',
 			},
 			y: 100,
 			opacity: 0,
@@ -562,7 +562,7 @@ export let ScrollAnimations = ({}) => {
 			x: 100,
 			opacity: 0,
 			filter: 'blur(40px)',
-			duration: 1.5,
+			duration: 1,
 		});
 
 		sequence
@@ -583,7 +583,7 @@ export let ScrollAnimations = ({}) => {
 				y: 100,
 				opacity: 0,
 				filter: 'blur(40px)',
-				duration: 1.5,
+				duration: 1,
 				stagger: {
 					each: 0.2,
 				},
@@ -595,7 +595,7 @@ export let ScrollAnimations = ({}) => {
 					scrub: 5,
 				},
 				y: 0,
-				duration: 3,
+				duration: 2,
 				stagger: {
 					each: 0.2,
 				},
@@ -612,7 +612,7 @@ export let ScrollAnimations = ({}) => {
 				y: 100,
 				opacity: 0,
 				filter: 'blur(20px)',
-				duration: 1.5,
+				duration: 1,
 				stagger: {
 					each: 0.3,
 				},
@@ -630,7 +630,7 @@ export let ScrollAnimations = ({}) => {
 				y: 100,
 				opacity: 0,
 				filter: 'blur(20px)',
-				duration: 1.5,
+				duration: 1,
 				stagger: {
 					each: 0.3,
 				},
@@ -648,7 +648,7 @@ export let ScrollAnimations = ({}) => {
 				y: 100,
 				opacity: 0,
 				filter: 'blur(20px)',
-				duration: 1.5,
+				duration: 1,
 				stagger: {
 					each: 0.1,
 				},
@@ -666,7 +666,7 @@ export let ScrollAnimations = ({}) => {
 				y: -50,
 				opacity: 0,
 				filter: 'blur(20px)',
-				duration: 1.5,
+				duration: 1,
 				stagger: {
 					each: 0.2,
 				},
@@ -684,7 +684,7 @@ export let ScrollAnimations = ({}) => {
 				y: 100,
 				opacity: 0,
 				filter: 'blur(20px)',
-				duration: 1.5,
+				duration: 1,
 				stagger: {
 					each: 0.3,
 				},
