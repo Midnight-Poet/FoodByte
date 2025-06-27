@@ -1573,7 +1573,7 @@ footer {
 	}
 
 	.mission {
-		flex-direction: column !important;
+		flex-direction: column;
 		& .text {
 			width: 100%;
 		}
@@ -1584,7 +1584,7 @@ footer {
 				display: none;
 			}
 			& div {
-				width: 100%;
+				width: 100% !important;
 				border-bottom: var(--border);
 				&:nth-of-type(odd) {
 					border-right: none;
