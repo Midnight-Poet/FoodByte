@@ -542,7 +542,7 @@ section {
 
 	& .sub-sec {
 		display: flex;
-		align-items: center;
+		/* align-items: center; */
 		justify-content: space-between;
 		overflow-x: scroll;
 		scroll-behavior: smooth;
@@ -554,7 +554,7 @@ section {
 		}
 		& > div {
 			scroll-snap-align: start;
-			min-width: 32.3%;
+			/* width: 100%; */
 			border: var(--border);
 			border-radius: 20px;
 			overflow: hidden;
@@ -563,6 +563,7 @@ section {
 			& img {
 				border-radius: 20px;
 				width: 100%;
+				height: 65%;
 				margin: auto;
 			}
 			& .txt {
@@ -588,7 +589,7 @@ section {
 					}
 				}
 				& p {
-					font-size: 13px;
+					font-size: 15px;
 					line-height: 20px;
 					font-weight: 400;
 					margin-top: 10px;
@@ -760,14 +761,18 @@ section {
 		width: 100%;
 		margin: 50px 0;
 		& > div {
-			width: 49%;
+			min-width: 49%;
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
 			padding: 10px;
 			border: var(--border);
 			border-radius: 12px;
 			margin: 10px 0;
-			& img {
+			& .img {
+				
+				background-position: center;
+				background-size: cover;
+				/* width: 100%; */
 				grid-column: span 1;
 				grid-row: span 2;
 				border-radius: 12px;
@@ -800,6 +805,9 @@ section {
 					font-size: 20px;
 					color: var(--primary-clr);
 					margin: 5px 0;
+					& > i {
+						color: var(--primary-clr);
+					}
 				}
 			}
 		}
@@ -907,13 +915,13 @@ section {
 }
 
 /* ---Vendor Styling--- */
-
 .vendor-hero {
 	text-align: center;
 	& .logo {
 		display: flex;
 		justify-self: center;
 		border-radius: 100%;
+		width: 40%;
 	}
 	& .items {
 		position: relative;
@@ -944,17 +952,24 @@ section {
 					overflow: hidden;
 					padding: 10px;
 					margin: 20px 0;
-					& img {
+					& .img {
 						border-radius: 20px;
 						width: 100%;
-						height: 240px;
+						height: 400px;
 						margin: auto;
+						background-position: center;
+						background-size: cover;
 					}
 					& .txt {
 						text-align: center;
+						& h5 {
+							font-size: 20px;
+							line-height: 30px;
+							margin: 10px 0;
+						}
 						& p {
-							font-size: 13px;
-							line-height: 16px;
+							font-size: 16px;
+							line-height: 20px;
 							font-weight: 400;
 						}
 					}
@@ -966,6 +981,9 @@ section {
 						& h6 {
 							font-size: larger;
 							color: var(--primary-clr);
+							& i {
+								color: var(--primary-clr);
+							}
 						}
 
 						& span {
@@ -982,7 +1000,6 @@ section {
 						justify-content: space-between;
 						& > a {
 							width: 49%;
-
 						}
 						& button {
 							width: 100%;
@@ -1173,8 +1190,14 @@ section {
 		margin: 30px 0;
 		display: flex;
 		justify-content: space-between;
-		& img {
+		
+		& .img {
+			border-radius: 20px;
 			width: 30%;
+			height: 250px;
+			margin: auto;
+			background-position: center;
+			background-size: cover;
 		}
 		& > div {
 			width: 68%;
@@ -1198,7 +1221,6 @@ section {
 				justify-content: space-between;
 				& > a {
 					width: 49%;
-
 				}
 				& button {
 					width: 100%;
@@ -1232,7 +1254,6 @@ section {
 		}
 	}
 }
-
 /* ---Vendor Styling--- */
 
 /* Footer */
@@ -1654,6 +1675,12 @@ footer {
 	}
 
 	.vendor-hero {
+		& .logo {
+			width: 80%;
+		}
+		& .herosection p {
+			font-size: 16px;
+		}
 		& .items {
 			& > div {
 				& > div:first-child > div {

@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import logo from '../resources/logo-removebg-preview.png';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Dish, Vendors } from '../pages/vendor';
-import { services, dish } from '../pages/home';
+import { services, dish, restaurants } from '../pages/home';
 
 export let Navbar = () => {
 	let navbar = useRef();
@@ -71,7 +71,7 @@ export let Navbar = () => {
 						<li>services</li>
 					</a>
 					<a
-						href='/vendor'
+						href='/client/vendor'
 						className={location.pathname.includes('/vendor') ? 'active' : ''}>
 						<li>restaurants</li>
 					</a>
@@ -249,20 +249,38 @@ export let RestaurantComponent = (props) => {
 	}, [update]);
 
 	return (
-		<div>
+		<div style={props.cardItems.length > 2 ? { minWidth: '32.3%' } : { width: '49%' }}>
 			<img
-				src={props.cardItems.imageSrc}
-				alt=''
+				src={props.cardItems.logo_url}
+				alt={`${props.cardItems.name}`}
 			/>
 			<div class='txt'>
 				<div>
 					<h5>{props.cardItems.name}</h5>
-					<span>
+					{/* <span>
 						{props.cardItems.rating}
 						<i className='fa-solid fa-star'></i>
-					</span>
+					</span> */}
 				</div>
-				<p>{props.cardItems.description}</p>
+				<div>
+					<p>
+						{props.cardItems.description
+							? props.cardItems.description
+							: 'No Description Available'}
+					</p>
+					<p>
+						<b>Address:  </b>  
+						{props.cardItems.address}
+					</p>
+					<p>
+						<b>phone number:  </b>  
+						{props.cardItems.phone_number}
+					</p>
+					<p style={{ textTransform: 'lowercase' }}>
+						<b>email:  </b>  
+						{props.cardItems.email}
+					</p>
+				</div>
 				<div>
 					<a
 						href={`/vendor/${props.cardItems.name}`}
@@ -292,7 +310,6 @@ export let InfoCard = (props) => {
 };
 
 export let DishComponent = (props) => {
-	
 	let navigates = useNavigate();
 
 	let update = () => {
@@ -305,17 +322,21 @@ export let DishComponent = (props) => {
 	}, [update]);
 	return (
 		<div>
-			<img
-				src={props.obj.image}
-				alt=''
-			/>
+			<div
+				className='img'
+				style={{ backgroundImage: `url(${props.obj.images[0].url})` }}></div>
 			<div class='txt'>
-				<h5>{props.obj.title}</h5>
-				<p>{props.obj.details}</p>
+				<h5>{props.obj.name}</h5>
+				<p>{props.obj.description}</p>
 			</div>
 			<div>
-				<h6>{props.obj.price}</h6>
-				<span>{props.obj.deliveryFee}</span>
+				<h6>
+					<i className='fa-regular fa-naira-sign'></i>
+					{props.obj.price}
+				</h6>
+				<span>
+					<del>{props.obj.discount}</del>
+				</span>
 				<a
 					href={`/dish/${props.obj.id}`}
 					element={<Dish />}>
@@ -332,18 +353,26 @@ export let DishComponent = (props) => {
 
 export let PricingCardDetails = (props) => {
 	return (
-		<div>
-			<img
-				src={props.obj.image}
+		<div style={props.obj.length > 2 ? { minWidth: '32.3%' } : { width: '49%' }}>
+			<div
+				className='img'
+				style={{ backgroundImage: `url(${props.obj.images[0].url})` }}></div>
+			{/* <img
+				src={props.obj.images[0].url}
 				alt=''
-			/>
+			/> */}
 			<div class='txt'>
-				<h5>{props.obj.title}</h5>
-				<p>{props.obj.details}</p>
+				<h5>{props.obj.name}</h5>
+				<p>{props.obj.description}</p>
 			</div>
 			<div className='fee'>
-				<h6>{props.obj.price}</h6>
-				<span>{props.obj.deliveryFee}</span>
+				<h6>
+					<b>price: </b><i className='fa-regular fa-naira-sign'></i>{props.obj.price}
+				</h6>
+				<span>
+					<b>discount: </b>
+					<del>{props.obj.discount}</del>
+				</span>
 			</div>
 			<div className='btn'>
 				<a href='#'>
@@ -509,7 +538,6 @@ export let Slide = ({ slide, next, prev }) => {
 
 export let ScrollAnimations = ({}) => {
 	useEffect(() => {
-
 		gsap.registerPlugin(ScrollTrigger);
 		let heroSection = document.querySelector('.hero-section').children;
 		let sections = document.querySelectorAll('section');
@@ -696,9 +724,9 @@ export let ScrollAnimations = ({}) => {
 export let ScrollAnimations2 = () => {
 	useEffect(() => {
 		gsap.registerPlugin(ScrollTrigger);
-		let head = document.querySelector('.herosection')
-		let items = document.querySelector('.items')
-		let subsec = document.querySelector('.sub-sec')
+		let head = document.querySelector('.herosection');
+		let items = document.querySelector('.items');
+		let subsec = document.querySelector('.sub-sec');
 
 		gsap.from(head.children, {
 			scrollTrigger: {
@@ -739,14 +767,13 @@ export let ScrollAnimations2 = () => {
 				each: 0.1,
 			},
 		});
-
-	})
-}
+	});
+};
 
 export let ScrollAnimations3 = () => {
 	useEffect(() => {
-		let sect = document.querySelector('.vendor-section')
-		
+		let sect = document.querySelector('.vendor-section');
+
 		gsap.from(sect.children, {
 			scrollTrigger: {
 				trigger: sect,
@@ -760,5 +787,5 @@ export let ScrollAnimations3 = () => {
 				each: 0.1,
 			},
 		});
-	})
-}
+	});
+};
