@@ -244,7 +244,7 @@ export let RestaurantComponent = (props) => {
 	};
 	useEffect(() => {
 		if (update == true) {
-			navigate(`/vendor/${props.cardItems.name}`);
+			navigate(`/client/vendor/${props.cardItems.name}`);
 		}
 	}, [update]);
 
@@ -317,7 +317,7 @@ export let DishComponent = (props) => {
 	};
 	useEffect(() => {
 		if (update == true) {
-			navigates(`/vendor/${props.obj.id}`);
+			navigates(`/client/vendor/${props.obj.id}`);
 		}
 	}, [update]);
 	return (
@@ -338,7 +338,7 @@ export let DishComponent = (props) => {
 					<del>{props.obj.discount}</del>
 				</span>
 				<a
-					href={`/dish/${props.obj.id}`}
+					href={`/client/dish/${props.obj.id}`}
 					element={<Dish />}>
 					<button
 						class='regular-btn'
