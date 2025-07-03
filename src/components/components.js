@@ -269,21 +269,21 @@ export let RestaurantComponent = (props) => {
 							: 'No Description Available'}
 					</p>
 					<p>
-						<b>Address:  </b>  
+						<b>Address: </b>
 						{props.cardItems.address}
 					</p>
 					<p>
-						<b>phone number:  </b>  
+						<b>phone number: </b>
 						{props.cardItems.phone_number}
 					</p>
 					<p style={{ textTransform: 'lowercase' }}>
-						<b>email:  </b>  
+						<b>email: </b>
 						{props.cardItems.email}
 					</p>
 				</div>
 				<div>
 					<a
-						href={`/vendor/${props.cardItems.name}`}
+						href={`/client/vendor/${props.cardItems.name}`}
 						element={<Vendors />}>
 						<button
 							class='regular-btn'
@@ -367,7 +367,9 @@ export let PricingCardDetails = (props) => {
 			</div>
 			<div className='fee'>
 				<h6>
-					<b>price: </b><i className='fa-regular fa-naira-sign'></i>{props.obj.price}
+					<b>price: </b>
+					<i className='fa-regular fa-naira-sign'></i>
+					{props.obj.price}
 				</h6>
 				<span>
 					<b>discount: </b>
