@@ -317,7 +317,7 @@ export let DishComponent = (props) => {
 	};
 	useEffect(() => {
 		if (update == true) {
-			navigates(`/client/vendor/dish/${props.obj.id}`);
+			navigates(`/client/dish/${props.obj.id}`);
 		}
 	}, [update]);
 	return (
@@ -338,7 +338,7 @@ export let DishComponent = (props) => {
 					<del>{props.obj.discount}</del>
 				</span>
 				<a
-					href={`/client/vendor/dish/${props.obj.id}`}
+					href={`/client/dish/${props.obj.id}`}
 					element={<Dish />}>
 					<button
 						class='regular-btn'
