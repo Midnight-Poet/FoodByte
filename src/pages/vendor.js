@@ -11,6 +11,7 @@ import {
 import { useQuery } from '@tanstack/react-query';
 import Axios from 'axios';
 import useMeta from '../useMeta';
+import { Helmet } from 'react-helmet';
 
 export let Vendors = () => {
 	const { data, isLoading, isLoadingError } = useQuery({
@@ -37,12 +38,12 @@ export let Vendors = () => {
 	let prev = useRef();
 	let next = useRef();
 
-	useMeta({
-		title: data ? `Foodbyte | ${contentArr.name}` : null,
-		description: data ? contentArr.description : null,
-		ogImage: data ? contentArr.logo_url : null,
-		keywords: ['hey', 'me']
-	});
+	// useMeta({
+	// 	title: data ? `Foodbyte | ${contentArr.name}` : null,
+	// 	description: data ? contentArr.description : null,
+	// 	ogImage: data ? contentArr.logo_url : null,
+	// 	keywords: ['hey', 'me']
+	// });
 
 	if (isLoading) {
 		console.log('Loading');
@@ -56,11 +57,31 @@ export let Vendors = () => {
 		let data = document.head.onloadedmetadata
 		console.log(data);
 		
-
+		
 		
 
 		return (
 			<>
+				<Helmet>
+					<title>FoodByte | {contentArr.name}</title>
+					<meta
+						name='description'
+						content={contentArr.name}
+					/>
+					<meta
+						property='og:title'
+						content={contentArr.name}
+					/>
+					<meta
+						property='og:image'
+						content={contentArr.logo_url}
+					/>
+					<meta
+						property='og:url'
+						content={window.location.href}
+					/>
+				</Helmet>
+				
 				<section className='vendor-hero'>
 					<div className='herosection'>
 						<img
