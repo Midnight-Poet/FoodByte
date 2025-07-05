@@ -47,7 +47,7 @@ export let Navbar = () => {
 	return (
 		<div class='navbar'>
 			<a
-				href='../App.js'
+				href='/'
 				class='logo'>
 				<img
 					src={logo}
@@ -71,7 +71,7 @@ export let Navbar = () => {
 						<li>services</li>
 					</a>
 					<a
-						href='/client/vendor'
+						href='/vendors'
 						className={location.pathname.includes('/vendor') ? 'active' : ''}>
 						<li>restaurants</li>
 					</a>
@@ -112,7 +112,7 @@ export let Navbar = () => {
 						<li>services</li>
 					</a>
 					<a
-						href='/vendor'
+						href='/vendors'
 						className={location.pathname.includes('/vendor') ? 'active' : ''}>
 						<li>restaurants</li>
 					</a>
@@ -244,16 +244,19 @@ export let RestaurantComponent = (props) => {
 	};
 	useEffect(() => {
 		if (update == true) {
-			navigate(`/client/vendor/${props.cardItems.name}`);
+			navigate(`/${props.cardItems.name}`);
 		}
 	}, [update]);
 
 	return (
 		<div style={props.cardItems.length > 2 ? { minWidth: '32.3%' } : { width: '49%' }}>
-			<img
+			<div
+				className='img'
+				style={{ backgroundImage: `url(${props.cardItems.logo_url})` }}></div>
+			{/* <img
 				src={props.cardItems.logo_url}
 				alt={`${props.cardItems.name}`}
-			/>
+			/> */}
 			<div class='txt'>
 				<div>
 					<h5>{props.cardItems.name}</h5>
@@ -283,7 +286,7 @@ export let RestaurantComponent = (props) => {
 				</div>
 				<div>
 					<a
-						href={`/client/vendor/${props.cardItems.name}`}
+						href={`/${props.cardItems.name}`}
 						element={<Vendors />}>
 						<button
 							class='regular-btn'
@@ -317,7 +320,7 @@ export let DishComponent = (props) => {
 	};
 	useEffect(() => {
 		if (update == true) {
-			navigates(`/client/dish/${props.obj.id}`);
+			navigates(`/dishes/${props.obj.id}`);
 		}
 	}, [update]);
 	return (
@@ -338,7 +341,7 @@ export let DishComponent = (props) => {
 					<del>{props.obj.discount}</del>
 				</span>
 				<a
-					href={`/client/dish/${props.obj.id}`}
+					href={`/dishes/${props.obj.id}`}
 					element={<Dish />}>
 					<button
 						class='regular-btn'

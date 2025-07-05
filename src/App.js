@@ -7,7 +7,7 @@ import { Restaurants } from './pages/restaurants';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 function App() {
-	let client = new QueryClient();
+	let client = new QueryClient()
 	return (
 		<div className='App'>
 			<QueryClientProvider client={client}>
@@ -19,15 +19,15 @@ function App() {
 							element={<Home />}
 						/>
 						<Route
-							path='/client/vendor'
+							path='/vendors'
 							element={<Restaurants />}
 						/>
 						<Route
-							path='/client/vendor/:linkid'
+							path='/:linkid'
 							element={<Vendors />}
 						/>
 						<Route
-							path='/client/dish/:link'
+							path='/dishes/:link'
 							element={<Dish />}
 						/>
 					</Routes>

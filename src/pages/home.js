@@ -215,8 +215,7 @@ export let Home = () => {
 	} else {
 		let dishes = [];
 		data.forEach((element) => {
-			dishes.push(...element.dishes)
-			
+			dishes.push(...element.dishes);
 		});
 		console.log(dishes);
 
@@ -352,11 +351,9 @@ export let Home = () => {
 					<div
 						class='sub-sec slide'
 						ref={slide}>
-						{isLoading
-							? console.log('Loading...')
-							: data.map((element) => {
-									return <RestaurantComponent cardItems={element} />;
-							  })}
+						{data?.map((element) => {
+							return <RestaurantComponent cardItems={element} />;
+						})}
 					</div>
 					<div class='navigation'>
 						<i
@@ -462,9 +459,6 @@ export let Home = () => {
 							return <DishComponent obj={obj} />;
 						})}
 					</div>
-					<a href='#'>
-						<button class='light-btn'>see more</button>
-					</a>
 				</section>
 
 				<section class='contact pop-up'>

@@ -10,6 +10,7 @@ import {
 } from '../components/components';
 import { useQuery } from '@tanstack/react-query';
 import Axios from 'axios';
+import { Helmet } from 'react-helmet';
 
 export let Vendors = () => {
 	const { data, isLoading, isLoadingError } = useQuery({
@@ -45,6 +46,25 @@ export let Vendors = () => {
 
 		return (
 			<>
+				<Helmet>
+					<title>FoodByte | {contentArr.name}</title>
+					<meta
+						property='og:title'
+						content={contentArr.name}
+					/>
+					<meta
+						property='og:description'
+						content={contentArr.description}
+					/>
+					<meta
+						property='og:image'
+						content={contentArr.logo_url}
+					/>
+					<meta
+						property='og:type'
+						content='website'
+					/>
+				</Helmet>
 				<section className='vendor-hero'>
 					<div className='herosection'>
 						<img

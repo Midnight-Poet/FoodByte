@@ -555,15 +555,20 @@ section {
 		& > div {
 			scroll-snap-align: start;
 			/* width: 100%; */
+			height: max-content;
 			border: var(--border);
 			border-radius: 20px;
 			overflow: hidden;
 			padding: 10px 15px;
 			margin: 20px 0;
-			& img {
+			& .img {
+				
+				background-position: center;
+				background-size: cover;
 				border-radius: 20px;
 				width: 100%;
-				height: 65%;
+				height: 350px;
+				
 				margin: auto;
 			}
 			& .txt {
@@ -916,12 +921,13 @@ section {
 
 /* ---Vendor Styling--- */
 .vendor-hero {
-	text-align: center;
+	text-align: center !important;
 	& .logo {
-		display: flex;
-		justify-self: center;
+		/* display: flex;
+		justify-self: center; */
 		border-radius: 100%;
 		width: 40%;
+		/* margin: 0 auto; */
 	}
 	& .items {
 		position: relative;
@@ -1129,25 +1135,28 @@ section {
 .vendor-section {
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
-	flex-wrap: wrap;
+	/* align-items: center; */
+	flex-wrap: wrap !important;
 	& h1 {
 		width: 100%;
 		text-align: center;
 		color: var(--primary-clr);
 	}
 	& > div {
-		width: 49%;
+		width: 49% !important;
 		display: flex;
-		align-items: center;
+		/* align-items: center; */
 		justify-content: space-between;
 		border: var(--border);
 		border-radius: 20px;
 		/* overflow: hidden; */
 		padding: 8px;
 		margin: 20px 0;
-		& img {
+		& .img {
 			width: 40%;
+			background-position: center;
+			background-size: cover;
+			height: 100%;
 			border-radius: 20px;
 		}
 		& .txt {
@@ -1161,16 +1170,6 @@ section {
 				display: flex;
 				align-items: center;
 				justify-content: space-between;
-				& span {
-					display: flex;
-					align-items: center;
-					justify-content: center;
-					gap: 5px;
-					& i {
-						font-size: 13px;
-						color: var(--primary-clr);
-					}
-				}
 			}
 			& p {
 				font-size: 13px;
@@ -1218,6 +1217,7 @@ section {
 				width: 60%;
 				display: flex;
 				align-items: center;
+				flex-wrap: wrap;
 				justify-content: space-between;
 				& > a {
 					width: 49%;
@@ -1633,6 +1633,9 @@ footer {
 			& > div {
 				width: 100%;
 				margin: 10px 0;
+				& .img {
+					height: 100px;
+				}
 			}
 		}
 	}
@@ -1661,14 +1664,24 @@ footer {
 	/* ---Vendor Styling--- */
 	.vendor-section {
 		& > div {
-			width: 100%;
+			width: 100% !important;
+			/* align-items: center; */
+			& .img {
+				height: 100%;
+			}
 			& .txt {
+
+				text-align: left !important;
 				& h5 {
 					font-size: 20px;
+					margin: 10px autod;
 				}
 				& p {
 					font-size: 16px;
 					margin: 8% 0;
+				}
+				& > div:last-child {
+					text-align: center;
 				}
 			}
 		}
@@ -1703,9 +1716,16 @@ footer {
 
 	.dish-section {
 		& > div {
+			& .img {
+				width: 100%;
+			}
 			& > div {
+				width: 100%;
 				& .btn {
 					width: 80%;
+					& a {
+						width: 100%;
+					}
 				}
 			}
 		}
@@ -1863,8 +1883,9 @@ footer {
 	.vendor-section {
 		& > div {
 			flex-direction: column;
-			& img {
+			& .img {
 				width: 100%;
+				height: 260px;
 			}
 			& .txt {
 				width: 100%;

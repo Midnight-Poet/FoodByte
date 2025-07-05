@@ -4,6 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 import Axios from 'axios';
 
 export let Restaurants = () => {
+	
 	const { data, isLoading, isLoadingError } = useQuery({
 		queryKey: ['restaurant'],
 		queryFn: () => {
