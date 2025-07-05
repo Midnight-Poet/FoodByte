@@ -2,7 +2,6 @@ import { dishes, restaurants } from './home';
 import '../App.css';
 import { useParams } from 'react-router-dom';
 import { useRef } from 'react';
-import { useMeta } from '../components/useMeta';
 import {
 	PricingCardDetails,
 	ScrollAnimations2,
@@ -11,7 +10,7 @@ import {
 } from '../components/components';
 import { useQuery } from '@tanstack/react-query';
 import Axios from 'axios';
-import { Helmet } from 'react-helmet';
+import useMeta from '../useMeta';
 
 export let Vendors = () => {
 	const { data, isLoading, isLoadingError } = useQuery({
@@ -37,22 +36,29 @@ export let Vendors = () => {
 
 	let prev = useRef();
 	let next = useRef();
-	useMeta({
-		title: data? `FoodByte | ${contentArr.name}` : null,
-		description: 'Top meals from Vendor A.',
-		ogTitle:  data? `FoodByte | ${contentArr.name}` : null,
-		ogImage: data? contentArr.logo_url : null,
-	});
 
+	useMeta({
+		title: data ? `Foodbyte | ${contentArr.name}` : null,
+		description: data ? contentArr.description : null,
+		ogImage: data ? contentArr.logo_url : null,
+		keywords: ['hey', 'me']
+	});
 
 	if (isLoading) {
 		console.log('Loading');
 	} else if (isLoadingError) {
 		console.log('error on load');
 	} else {
-		// console.log(data[0]);
+		// let title = document.title
+		// title = contentArr.name
+		// console.log(title);
+		document.title = contentArr.name
+		let data = document.head.onloadedmetadata
+		console.log(data);
+		
 
 		
+
 		return (
 			<>
 				<section className='vendor-hero'>
