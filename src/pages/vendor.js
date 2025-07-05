@@ -2,6 +2,7 @@ import { dishes, restaurants } from './home';
 import '../App.css';
 import { useParams } from 'react-router-dom';
 import { useRef } from 'react';
+import { useMeta } from '../components/useMeta';
 import {
 	PricingCardDetails,
 	ScrollAnimations2,
@@ -36,6 +37,13 @@ export let Vendors = () => {
 
 	let prev = useRef();
 	let next = useRef();
+	useMeta({
+		title: data? `FoodByte | ${contentArr.name}` : null,
+		description: 'Top meals from Vendor A.',
+		ogTitle:  data? `FoodByte | ${contentArr.name}` : null,
+		ogImage: data? contentArr.logo_url : null,
+	});
+
 
 	if (isLoading) {
 		console.log('Loading');
@@ -44,27 +52,9 @@ export let Vendors = () => {
 	} else {
 		// console.log(data[0]);
 
+		
 		return (
 			<>
-				<Helmet>
-					<title>FoodByte | {contentArr.name}</title>
-					<meta
-						property='og:title'
-						content={contentArr.name}
-					/>
-					<meta
-						property='og:description'
-						content={contentArr.description}
-					/>
-					<meta
-						property='og:image'
-						content={contentArr.logo_url}
-					/>
-					<meta
-						property='og:type'
-						content='website'
-					/>
-				</Helmet>
 				<section className='vendor-hero'>
 					<div className='herosection'>
 						<img
@@ -134,7 +124,7 @@ export let Dish = () => {
 	data?.forEach((element) => {
 		dishes.push(...element.dishes);
 	});
-	
+
 	dishes.find(check);
 
 	if (isLoading) {
